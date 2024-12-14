@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2-1-ex</title>
+    <link rel="icon" href="#" />
+    <style>
+      .table-sv,
+      .table-sv td,
+      .table-sv th {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+
+      .table-sv {
+        margin-bottom: 20px;
+      }
+
+      table {
+        margin: 5px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>DANH SÁCH SINH VIÊN</h3>
+    <table class="table-sv">
+      <tr>
+        <th>STT</th>
+        <th>Họ tên</th>
+        <th>Năm sinh</th>
+        <th>Điểm trung bình</th>
+        <th>Lớp</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Võ Thiên Nhân</td>
+        <td>2001</td>
+        <td>8.2</td>
+        <td>CNTT19</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Nguyễn Anh Thành</td>
+        <td>2001</td>
+        <td>8.5</td>
+        <td>CNTT19</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Lê Anh Khoa</td>
+        <td>2002</td>
+        <td>8.1</td>
+        <td>CNTT20</td>
+      </tr>
+    </table>
+
+    <table class="table2">
+      <tr>
+        <td>Chọn phép tính:</td>
+        <td>
+          <input type="radio" name="phep_tinh" id="" /> Cộng
+          <input type="radio" name="phep_tinh" id="" /> Trừ
+          <input type="radio" name="phep_tinh" id="" /> Nhân
+          <input type="radio" name="phep_tinh" id="" /> Chia
+        </td>
+      </tr>
+      <tr>
+        <td>Số thứ nhất:</td>
+        <td colspan="4">
+          <input type="number" />
+        </td>
+      </tr>
+      <tr>
+        <td>Số thứ 2:</td>
+        <td colspan="4">
+          <input type="number" />
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button>Tính</button></td>
+      </tr>
+    </table>
+  </body>
+</html>
