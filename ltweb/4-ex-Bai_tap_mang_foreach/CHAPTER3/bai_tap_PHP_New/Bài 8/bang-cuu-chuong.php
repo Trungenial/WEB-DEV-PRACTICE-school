@@ -21,7 +21,7 @@
     <h2>In Bảng Cửu Chương</h2>
     <form method="post">
         <label for="range">Nhập khoảng (ví dụ: 1-5):</label>
-        <input type="text" id="range" name="range" pattern="\d+-\d+" required>
+        <input type="text" id="range" name="range" required>
         <input type="submit" value="In">
     </form>
 

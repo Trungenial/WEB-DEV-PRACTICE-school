@@ -16,11 +16,11 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $year = intval($_POST["year"]);
 
-        $can = ["Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ", "Canh", "Tân", "Nhâm", "Quý"];
-        $chi = ["Tý", "Sửu", "Dần", "Mão", "Thìn", "Tỵ", "Ngọ", "Mùi", "Thân", "Dậu", "Tuất", "Hợi"];
+        $can = ["Canh", "Tân", "Nhâm", "Quý", "Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ"];
+        $chi = ["Thân", "Dậu", "Tuất", "Hợi", "Tý", "Sửu", "Dần", "Mão", "Thìn", "Tỵ", "Ngọ", "Mùi"];
 
-        $canIndex = ($year + 6) % 10;
-        $chiIndex = ($year + 8) % 12;
+        $canIndex = ($year) % 10;
+        $chiIndex = ($year) % 12;
 
         $canChi = $can[$canIndex] . " " . $chi[$chiIndex];
 
