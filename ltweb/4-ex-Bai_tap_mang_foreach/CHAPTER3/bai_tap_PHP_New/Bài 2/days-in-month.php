@@ -13,20 +13,38 @@
     </form>
     
     <?php 
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $month = htmlspecialchars($_POST["month"]);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $month = htmlspecialchars($_POST["month"]);
 
-            $days = match ($month) {
-                1, 3, 5, 7, 8, 10, 12 => 31,
-                4, 6, 9, 11 => 30,
-                2 => 28,
-                default => "Tháng không hơp lệ";
-            };
-            echo "<br>";
-            echo "Tháng $month có $days ngày";
-        } else {
-            echo "Vui lòng nhập tháng";
-        }
-    ?>
+    switch ($month) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            $days = 31;
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            $days = 30;
+            break;
+        case 2:
+            $days = 28;
+            break;
+        default:
+            $days = "Tháng không hợp lệ";
+    }
+    
+    echo "<br>";
+    echo "Tháng $month có: $days ngày";
+} else {
+    echo "Vui lòng nhập tháng";
+}
+?>
+
 </body>
 </html>
