@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2-5-ex</title>
+    <title>Book</title>
     <link rel="icon" href="#" />
     <style>
       img {
@@ -14,18 +14,18 @@
       }
 
       .title,
-      .year {
+      .author {
         text-align: center;
       }
 
       .title {
         font-weight: 600;
-        font-size: 1.5vw;
+        font-size: 1vw;
         padding: 0 10px;
         margin-top: -2px;
       }
 
-      .year {
+      .author {
         font-size: 1.3vw;
         margin-top: -15px;
       }
@@ -57,8 +57,8 @@
           $list_the_loai = $result->fetch_all(MYSQLI_ASSOC);
       }
       $id_selected="";
-      if(isset($_GET["the_loai"])) {
-        $id_selected = $_GET["the_loai"];
+      if(isset($_POST["the_loai"])) {
+        $id_selected = $_POST["the_loai"];
       }
 
     ?>
@@ -82,7 +82,6 @@
     {
         $the_loai = $_POST["the_loai"];
 
-        require_once "config.php";
         // Viết câu lệnh SQL
         $sql = "SELECT tieu_de, tac_gia, hinh_thuc_bia, file_anh_bia, gia_ban, nha_xuat_ban
                 FROM sach
@@ -97,9 +96,9 @@
             echo "<div class='container'>";
               foreach ($book as $row) {
                 echo "<div class='movie-object'>";
-                  echo "<img src='book_image/{$row["file_anh_bia"]}' alt='{$row["tieu_de"]}' />";
+                  echo "<img src='book_image/book_image/{$row["file_anh_bia"]}' alt='{$row["tieu_de"]}' />";
                   echo  "<p class='title'>{$row["tieu_de"]}</p>";
-                  echo  "<p class='year'></p>";
+                  echo  "<p class='author'>{$row["tac_gia"]}</p>";
                 echo "</div>" ;
               }
             echo "</div>";
@@ -109,6 +108,5 @@
         $conn->close();
     }
   ?>
-    
   </body>
 </html>
