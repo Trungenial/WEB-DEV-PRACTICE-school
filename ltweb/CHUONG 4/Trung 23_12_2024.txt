@@ -1,0 +1,39 @@
+1. Lấy các cuốn sách có hình thức bìa là 'Bìa Mềm'
+
+SELECT * FROM sach WHERE hinh_thuc_bia = 'Bìa Mềm';
+
+
+2. Lấy các cuốn sách của tác giả 'Nguyễn Nhật Ánh'
+
+SELECT * FROM sach WHERE tac_gia = 'Nguyễn Nhật Ánh';
+
+
+3. Lấy các cuốn sách có giá lớn hơn 85000
+
+SELECT * FROM sach WHERE gia_ban > 85000;
+
+
+4. Lấy các cuốn sách thuộc thể loại 'Tiểu thuyết'
+
+SELECT * FROM sach s JOIN the_loai tl
+ON s.id_the_loai = tl.id WHERE tl.ten_the_loai = 'Tiểu thuyết';
+
+
+5. Đếm số lượng cuốn sách của từng nhà xuất bản.
+
+SELECT nha_xuat_ban, COUNT(*) AS 'so luong' FROM sach
+GROUP BY nha_xuat_ban;
+
+
+6. Hiển thị các nhà xuất bản có nhiều hơn 5 cuốn sách.
+
+SELECT nha_xuat_ban, COUNT(*) AS 'so luong' FROM sach
+GROUP BY nha_xuat_ban HAVING COUNT(*) > 5;
+
+
+7. Thống kê số lượng các cuốn sách theo từng thể loại.
+
+SELECT ten_the_loai, COUNT(*) AS 'so luong' 
+FROM sach s JOIN the_loai tl
+ON s.id_the_loai = tl.id
+GROUP BY ten_the_loai;
