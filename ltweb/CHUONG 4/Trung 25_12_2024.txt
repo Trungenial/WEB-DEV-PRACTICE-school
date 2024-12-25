@@ -1,0 +1,55 @@
+1. Lấy danh sách các nhân viên (staffs) của cửa hàng (stores) có tên (store_name) Santa Cruz Bikes. Thông tin hiển thị gồm: mã nhân viên (staff_id), họ tên (first_name, last_name), email. 
+
+SELECT a.staff_id, CONCAT(a.first_name, ' ', a.last_name) AS 'ho ten', a.email FROM stores o JOIN staffs a ON  o.store_id = a.store_id
+WHERE store_name = 'Santa Cruz Bikes';
+
+
+2. Lấy danh sách các sản phẩm (products) có giá tiền nhỏ hơn 149.99. Thông tin cần hiển thị gồm: mã sản phẩm (product_id), tên sản phẩm (product_name), năm sản xuất (model_year), đơn giá (list_price), tên thương hiệu (brand_name). 
+
+SELECT p.product_id, p.product_name, p.model_year, p.list_price, b.brand_name FROM products p JOIN brands b ON p.brand_id = b.brand_id WHERE p.list_price < 149.99;
+
+
+3. Lấy danh sách các sản phẩm (products) thuộc danh mục sản phẩm (category) Mountain Bikes. Thông tin hiển thị gồm: mã sản phẩm (product_id), Tên sản phẩm (product_name), Năm sản xuất (model_year), Đơn giá (list_price). 
+
+
+SELECT p.product_id, p.product_name, p.model_year, p.list_price 
+FROM products p JOIN categories c 
+ON p.category_id = c.category_id
+WHERE c.category_name = 'Mountain Bikes';
+
+
+4. Thống kê số lượng đơn hàng bị hủy tại mỗi cửa hàng. Thông tin hiển thị gồm: tên cửa hàng (store_name), số đơn hàng bị hủy. 
+
+SELECT s.store_name, COUNT(*) AS 'so don bi huy' 
+FROM stores s JOIN orders o ON s.store_id = o.store_id 
+WHERE o.order_status = 3
+GROUP BY s.store_name;
+
+
+5. Lấy danh sách những khách hàng có tổng giá trị đơn hàng (chưa giảm giá) lớn hơn 3000. Thông tin hiển thị gồm: họ tên (first_name, last_name) , email, tổng giá trị đơn hàng. 
+
+SELECT CONCAT(c.first_name, ' ', c.last_name) AS 'ho ten', c.email, SUM(oi.list_price * oi.quantity) AS 'tong gia tri don hang'
+FROM customers c 
+JOIN orders o ON c.customer_id = o.customer_id JOIN order_items oi ON o.order_id = oi.order_id
+GROUP BY c.customer_id
+HAVING SUM(oi.list_price * oi.quantity) > 3000;
+
+
+6. Lấy danh sách 10 sản phẩm có số lượng hàng tồn nhiều nhất tại cửa hàng Santa Cruz Bikes. Thông tin hiển thị gồm: tên sản phẩm (product_name), số lượng hàng tồn (quantity). 
+ 
+SELECT p.product_name, sk.quantity
+FROM stores se 
+JOIN stocks sk ON se.store_id = sk.store_id
+JOIN products p ON p.product_id = sk.product_id
+WHERE se.store_name = 'Santa Cruz Bikes'
+ORDER BY sk.quantity DESC
+LIMIT 10;
+
+7. Lấy danh sách các sản phẩm chưa bao giờ được mua. Thông tin hiển thị gồm: mã sản phẩm (product_id), tên sản 
+phẩm (product_name).
+
+SELECT product_id, product_name 
+FROM products 
+WHERE product_id NOT IN (SELECT DISTINCT product_id FROM order_items)
+
+
