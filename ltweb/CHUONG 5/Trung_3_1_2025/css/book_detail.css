@@ -1,0 +1,20 @@
+.book_detail {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
+}
+
+.book-image, .book-image img {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    width: 200px;
+}
+
+.book-infomation {
+
+    grid-row: 3 / 4;
+}
+
+.book-description {
+    grid-row: 4 / 5;
+}
