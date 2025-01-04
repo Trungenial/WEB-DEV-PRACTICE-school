@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book</title>
-    <link rel="icon" href="#" />
     <link rel="stylesheet" href="css/style.css">
+    <style>
+      
+    </style>
   </head>
   <body>
     <?php
@@ -49,7 +51,8 @@ thay thế form chọn loại sách bằng navbar
                     echo "<li><a href='./book.php?the_loai=" . $row["id"] . "'>" . $row["ten_the_loai"] . "</a></li>";
                 }
             ?>
-            <a href="signup.php"><button>Đăng nhập</button></a>
+            <a href="signupform.php"><button>Đăng nhập</button></a>
+            <a href="signinform.php"><button>Đăng ký</button></a>
        </ul>
      </div>             
 

@@ -1,49 +1,60 @@
 img {
-    width: 100%;
-    border-radius: 10px 10px 0 0;
-    object-fit: cover;
-    height: 300px;
-  }
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+  height: 300px;
+}
 
-  .title,
-  .author {
-    text-align: center;
-  }
+.title,
+.author {
+  text-align: center;
+  text-decoration: none;
+}
 
-  .title {
-    font-weight: 600;
-    font-size: 1vw;
-    padding: 0 10px;
-    margin-top: -2px;
-  }
+.title {
+  font-weight: 600;
+  font-size: 1vw;
+  padding: 0 10px;
+  margin-top: -2px;
+}
 
-  .author {
-    font-size: 1.3vw;
-    margin-top: -15px;
-  }
+.author {
+  font-size: 1.3vw;
+  margin-top: -15px;
+}
 
-  .container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
-    background-color: white;
-    margin: 0 auto;
-  }
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  background-color: white;
+  margin: 0 auto;
+}
 
-  .container div {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
-      0 6px 20px 0 rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-  }
+.container div {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
 
-  .menu li {
-    display: inline-block;
-    padding: 15px;
-  }
+.menu li {
+  display: inline-block;
+  padding: 15px;
+}
 
-  .menu .menu-item {
-    background-color: #F66C6C;
-    color: white;
-    font-weight: bold;
-  }
+.menu .menu-item {
+  background-color: #f66c6c;
+  color: white;
+  font-weight: bold;
+}
+
+.menu,
+.container,
+a[href] {
+  text-decoration: none;
+  color: rgb(214, 21, 21);
+}
+
+a {
+  color: black !important;
+}

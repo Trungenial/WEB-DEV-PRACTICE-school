@@ -1,10 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/book_detail.css">
+</head>
 
-<html>
-    <head>
-    <link rel="stylesheet" href="css/book_detail.css">
-    </head>
-    <body>
+<body>
         <?php
             if(isset($_GET["id"])) {
                 require_once "config.php";
@@ -20,27 +24,29 @@
                     die();
                 }
         ?>
-        <div class="book_detail">
-            <h1><?php echo $book_detail["tieu_de"]; ?></h1>
-            <div class="book-image">
-                <img src="book_image/<?php echo $book_detail["file_anh_bia"];?>" alt="">
-            </div>
-            <div class="book-infomation">
-                <p>Nhà cung cấp: <?php echo $book_detail["nha_cung_cap"]; ?></p>
-                <p>Nhà xuất bản: <?php echo $book_detail["nha_xuat_ban"]; ?></p>
-                <p>Tác giả: <?php echo $book_detail["tac_gia"]; ?></p>
-                <p>Hình thức bìa: <?php echo $book_detail["hinh_thuc_bia"]; ?></p>
-            </div>
-            <div class="book-description">
-                <p class="">Mô tả: <?php echo $book_detail["mo_ta"];?></p>
-            </div>
-        </div>
+  <div class="book-detail">
+    <h1 class="title"><?php echo $book_detail["tieu_de"]; ?></h1>
+    <div class="book-image">
+      <img src="book_image/<?php echo $book_detail["file_anh_bia"];?>" alt="">
+    </div>
+    <div class="book-infomation">
+      <p>Nhà cung cấp: <?php echo $book_detail["nha_cung_cap"]; ?></p>
+      <p>Nhà xuất bản: <?php echo $book_detail["nha_xuat_ban"]; ?></p>
+      <p>Tác giả: <?php echo $book_detail["tac_gia"]; ?></p>
+      <p>Hình thức bìa: <?php echo $book_detail["hinh_thuc_bia"]; ?></p>
+    </div>
+    <div class="book-description">
+      <p class="">Mô tả: <?php echo $book_detail["mo_ta"];?></p>
+    </div>
+  </div>
 
-        <?php        
+  <?php        
             } else {
                 header("location: ./book.php");
                 die();
             }
         ?>
-    </body>
+
+</body>
+
 </html>

@@ -1,20 +1,35 @@
-.book_detail {
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    grid-template-rows: auto auto auto auto auto;
+.title {
+  font-size: 20px;
+  margin: 0;
 }
 
-.book-image, .book-image img {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    width: 200px;
+.book-image {
+  width: 500px;
+  object-fit: contain;
+  position: absolute;
+  left: 20px;
+  top: -40px;
+  z-index: -1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .book-infomation {
-
-    grid-row: 3 / 4;
+  position: absolute;
+  right: 800px;
+  top: 150px;
 }
 
 .book-description {
-    grid-row: 4 / 5;
+  position: absolute;
+  top: 400px;
+  width: 1000px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
 }
